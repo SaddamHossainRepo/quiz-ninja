@@ -6,6 +6,10 @@ import Topics from './components/Topics/Topics';
 import Main from './layouts/Main';
 import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
+import Quiz from './components/Quiz/Quiz';
+import ReactQuiz from './components/Quiz/ReactQuiz';
+import AllQuiz from './components/AllQuiz/AllQuiz';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const router = createBrowserRouter([
@@ -15,12 +19,27 @@ function App() {
       children:
         [
           {
-            path: '/home',
+            path: '/',
             loader:  () => {
               return fetch('https://openapi.programming-hero.com/api/quiz')
             },
             element: <Home></Home>
           },
+          {
+            path: '/home',
+            // loader:  () => {
+            //   return fetch('https://openapi.programming-hero.com/api/quiz')
+            // },
+            element: <Home></Home>
+          },
+          {
+            path: '/quiz/:id',
+            loader: ({params}) => {
+              return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`) 
+          },
+            element: <AllQuiz></AllQuiz>
+          },
+         
           {
             path: '/topics',
             element: <Topics></Topics>
@@ -32,6 +51,10 @@ function App() {
           {
             path: '/blog',
             element: <Blog></Blog>
+          },
+          {
+            path: '*',
+            element: <p className='text-blck text-3xl'>Sorry, Something goes wrong</p>
           }
         ]
 
@@ -40,7 +63,7 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router}>
-
+      
       </RouterProvider>
     </div>
   );
