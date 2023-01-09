@@ -54,13 +54,14 @@ const AllQuiz = () => {
             {/* <p>{`questions${id}`}</p> */}
             {
                 questions.map(question =>
+                    
                     <div className='mb-10 ml-10 mr-10 rounded-3xl bg bg-indigo-200 p-10 border-2 border-sky-500 '>
                         <div className='flex justify-center '>
                             <p className='mb-5 bg bg-purple-50 shadow-lg shadow-cyan-500/50 p-6 border-2 border-sky-500 rounded-md text-xl font-mono text-blue '>Quiz-{number++}{question.question}</p>
                             {/* {const correctAns = question.correctAnswer } */}
                             <div className='ml-12 flex justify-end'>
                                 <button onClick={()=>{
-                                    toast.success(question.correctAnswer,{position: toast.POSITION.TOP_CENTER}, {autoClose: 100})
+                                    toast(question.correctAnswer,{position: toast.POSITION.TOP_CENTER}, {autoClose: 100})
                                     
                                 }}>
                                     <ToastContainer></ToastContainer>
