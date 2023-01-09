@@ -13,6 +13,7 @@ const Home = () => {
     return (
         <div>
             <div className='ml-24 mr-24 mt-10 h-64' style={{ backgroundImage: `url(https://static.vecteezy.com/system/resources/thumbnails/007/343/533/small/yellow-quiz-time-banner-with-comic-style-background-suitable-for-use-for-promotional-designs-vector.jpg)`}}>
+            <p className='text-6xl text-indigo-700 font-bold '>Test Your knowledge, Build Confidence! </p>
             </div>
             <div className='grid grid-cols-2 mt-10'>
                 {
