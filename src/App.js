@@ -7,7 +7,7 @@ import Main from './layouts/Main';
 import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
 import Quiz from './components/Quiz/Quiz';
-import ReactQuiz from './components/Quiz/ReactQuiz';
+// import ReactQuiz from './components/Quiz/ReactQuiz';
 import AllQuiz from './components/AllQuiz/AllQuiz';
 import { ToastContainer } from 'react-toastify';
 
